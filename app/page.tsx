@@ -237,9 +237,11 @@ export default function HomePage() {
       </section>
 
       {/* NEW SECTION: Bottlenecks (BG Black, Left Aligned) */}
-      <section className={`py-16 sm:py-20 md:py-24 bg-black pl-16 pr-80`}>
+      <section
+        className={`py-12 sm:py-16 md:py-20 lg:py-24 bg-black pl-4 pr-8 sm:pl-8 sm:pr-16 md:pl-12 md:pr-32 lg:pl-16 lg:pr-48 xl:pr-80`}
+      >
         <div className="text-right">
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white leading-tight space-y-1">
+          <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-white leading-tight space-y-1">
             <div>
               Jo fixes{" "}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-bold">
