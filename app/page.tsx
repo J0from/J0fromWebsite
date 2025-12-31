@@ -112,8 +112,8 @@ export default function HomePage() {
       </section>
 
       {/* Main Content */}
-      <div className={`flex flex-col items-center justify-center min-h-[30vh] sm:min-h-[35vh] ${marginClass}`}>
-        <div className="text-center max-w-6xl mx-auto w-full">
+      <div className="flex flex-col items-center justify-center min-h-[30vh] sm:min-h-[35vh] w-full">
+        <div className="text-center w-full">
           {/* Main Heading */}
           <div className="mb-4 sm:mb-6 md:mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-900 mb-4 sm:mb-6 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 leading-tight">
