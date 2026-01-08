@@ -3,19 +3,59 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import { CookieBanner } from "@/components/cookie-banner"
+import { StructuredData } from "@/components/structured-data"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Human + Machine",
-  description: "The future of Human + Machine is here. Join the revolution and be among the first to experience Jo.",
+  title: "Jo: Human + Machine | AI Workforce Automation for Regulated Industries",
+  description:
+    "We help businesses strike the right balance between Human + Machine. AI-powered digital employees for healthcare, manufacturing, energy, and food processing. Stay compliant, cut costs, reduce labor bottlenecks.",
+  keywords: [
+    "AI workforce automation",
+    "human machine balance",
+    "digital employees",
+    "compliance automation",
+    "labor shortage solutions",
+    "regulated industries AI",
+  ],
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   generator: "v0.app",
+  openGraph: {
+    title: "Jo: Human + Machine | AI Workforce Automation",
+    description:
+      "We help businesses strike the right balance between Human + Machine. Fix labor bottlenecks in regulated industries.",
+    type: "website",
+    url: "https://www.jofrom.io",
+    siteName: "Jo",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jo: Human + Machine | AI Workforce Automation",
+    description:
+      "We help businesses strike the right balance between Human + Machine. Fix labor bottlenecks in regulated industries.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add your Google Search Console verification code here when available
+    // google: 'your-verification-code',
+  },
 }
 
 export default function RootLayout({
@@ -29,10 +69,20 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
+        <StructuredData />
       </head>
       <body className={inter.className}>
         {children}
         <CookieBanner />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-LXZ15J9WXC" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LXZ15J9WXC');
+          `}
+        </Script>
         <Script id="apollo-tracking" strategy="afterInteractive">
           {`
             function initApollo(){

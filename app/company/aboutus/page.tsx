@@ -20,9 +20,16 @@ import Image from "next/image"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "About Jo | The Future of Human + Machine Collaboration",
+  title: "About Jo | Human + Machine Balance | Our Mission & Values",
   description:
-    "Learn about Jo's mission to redefine the future of work by creating a balance between human creativity and machine efficiency through our suite of intelligent digital coworkers.",
+    "Learn about Jo's mission to redefine work by balancing human creativity with machine efficiency. Our Discover, Design, Deploy framework helps businesses optimize operations through specialized digital coworkers.",
+  openGraph: {
+    title: "About Jo | Human + Machine Balance",
+    description:
+      "Learn about Jo's mission to redefine the future of work through intelligent digital coworkers and our proprietary framework.",
+    url: "https://jofrom.io/company/aboutus",
+    type: "website",
+  },
 }
 
 export default function AboutUsPage() {

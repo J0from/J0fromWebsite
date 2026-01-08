@@ -7,8 +7,17 @@ import type { Metadata } from "next"
 import { Footer } from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Jo | Solutions",
-  description: "Discover Jo's intelligent automation for businesses of every size",
+  title: "Solutions for Every Business | Jo: Human + Machine",
+  description:
+    "Discover Jo's intelligent automation solutions for SMBs, enterprises, and consultants. Choose the right digital workforce for your business size and industry needs.",
+  openGraph: {
+    title: "Solutions for Every Business | Jo: Human + Machine",
+    description:
+      "Discover Jo's intelligent automation solutions for SMBs, enterprises, and consultants. Choose the right digital workforce for your business size and industry needs.",
+    url: "https://jofrom.io/solutions",
+    siteName: "Jo: Human + Machine",
+    type: "website",
+  },
 }
 
 export default function SolutionsPage() {
@@ -81,9 +90,7 @@ export default function SolutionsPage() {
           <h1 className="font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent text-4xl">
             Every Stage of Growth
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Jo adapts to your business
-          </p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Jo adapts to your business</p>
         </div>
       </section>
 
