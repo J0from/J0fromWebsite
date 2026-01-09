@@ -1,18 +1,5 @@
 "use server"
 
-let Resend: any = null
-let resend: any = null
-
-// Only import and initialize Resend if we're in a proper server environment
-try {
-  if (typeof window === "undefined" && process.env.RESEND_API_KEY) {
-    Resend = (await import("resend")).Resend
-    resend = new Resend(process.env.RESEND_API_KEY)
-  }
-} catch (error) {
-  console.log("[v0] Resend package not available, using mock email mode")
-}
-
 interface ContactFormData {
   name: string
   email: string
@@ -65,8 +52,22 @@ interface GrowthFormData {
   ready: boolean
 }
 
+async function getResendClient() {
+  try {
+    if (typeof window === "undefined" && process.env.RESEND_API_KEY) {
+      const { Resend } = await import("resend")
+      return new Resend(process.env.RESEND_API_KEY)
+    }
+  } catch (error) {
+    console.log("[v0] Resend package not available, using mock email mode")
+  }
+  return null
+}
+
 export async function sendContactFormEmail(formData: ContactFormData) {
   try {
+    const resend = await getResendClient()
+
     if (!resend) {
       console.log("[v0] Mock email send (no API key configured):", formData)
       return {
@@ -142,6 +143,8 @@ export async function sendContactFormEmail(formData: ContactFormData) {
 
 export async function sendFractionalFormEmail(formData: FractionalFormData) {
   try {
+    const resend = await getResendClient()
+
     if (!resend) {
       console.log("[v0] Mock email send (no API key configured):", formData)
       return {
@@ -232,6 +235,8 @@ export async function sendFractionalFormEmail(formData: FractionalFormData) {
 
 export async function sendWhitepaperLeadEmail(formData: WhitepaperFormData) {
   try {
+    const resend = await getResendClient()
+
     if (!resend) {
       console.log("[v0] Mock email send (no API key configured):", formData)
       return {
@@ -307,6 +312,8 @@ export async function sendWhitepaperLeadEmail(formData: WhitepaperFormData) {
 
 export async function submitWhitepaperForm(formData: WhitepaperDownloadFormData) {
   try {
+    const resend = await getResendClient()
+
     if (!resend) {
       console.log("[v0] Mock email send (no API key configured):", formData)
       return {
@@ -392,6 +399,8 @@ export async function submitWhitepaperForm(formData: WhitepaperDownloadFormData)
 
 export async function sendGrowthFormEmail(formData: GrowthFormData) {
   try {
+    const resend = await getResendClient()
+
     if (!resend) {
       console.log("[v0] Mock email send (no API key configured):", formData)
       return {
