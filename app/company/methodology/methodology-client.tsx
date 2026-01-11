@@ -367,7 +367,7 @@ export function MethodologyPageClient() {
         </div>
       </div>
 
-      {/* 8-Phase Decomposition */}
+      {/* Role Decomposition */}
       <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900">
