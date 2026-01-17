@@ -2,23 +2,41 @@ import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface LogoProps {
+  size?: "xs" | "sm" | "md" | "lg" | "xl"
   width?: number
   height?: number
   className?: string
   withGradient?: boolean
 }
 
-export function Logo({ width = 20, height = 20, className, withGradient = true }: LogoProps) {
+const sizeClasses = {
+  xs: "w-3 h-3 sm:w-4 sm:h-4",
+  sm: "w-4 h-4 sm:w-5 sm:h-5",
+  md: "w-5 h-5 sm:w-6 sm:h-6",
+  lg: "w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8",
+  xl: "w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12",
+}
+
+export function Logo({ size, width, height, className, withGradient = true }: LogoProps) {
+  const useResponsive = size && !width && !height
+  const sizeClass = size ? sizeClasses[size] : ""
+  const pixelWidth = width || 20
+  const pixelHeight = height || 20
+
   return (
     <span className={cn("inline-flex items-center", className)}>
       <span className="font-bold text-slate-900">J</span>
-      <div className="relative mx-1" style={{ width: `${width}px`, height: `${height}px` }}>
+      <div
+        className={cn("relative mx-1", useResponsive && sizeClass)}
+        style={!useResponsive ? { width: `${pixelWidth}px`, height: `${pixelHeight}px` } : undefined}
+      >
         <Image
           src="/qubit.png"
           alt="Qubit"
-          width={width}
-          height={height}
-          className={cn(withGradient ? "brightness-0" : "")}
+          fill={useResponsive}
+          width={!useResponsive ? pixelWidth : undefined}
+          height={!useResponsive ? pixelHeight : undefined}
+          className={cn("object-contain", withGradient ? "brightness-0" : "")}
         />
         {withGradient && (
           <div
