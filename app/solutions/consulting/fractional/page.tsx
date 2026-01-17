@@ -234,7 +234,7 @@ export default function FractionalOperationsPage() {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  {["Expert operations team", "AI-powered augmentation", "Financial clarity"].map((item, i) => (
+                  {["Expert operations team", "Jo powered augmentation", "Financial clarity"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center">
                         <Check size={14} className="text-blue-600" />
