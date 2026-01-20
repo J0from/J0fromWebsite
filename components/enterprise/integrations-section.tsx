@@ -11,17 +11,17 @@ export function IntegrationsSection() {
     { name: "BatchMaster", industry: "Food & Beverage", logo: "/logos/batchmaster.png", url: "https://www.batchmaster.com/" },
     { name: "Wolters Kluwer", industry: "Food & Beverage", logo: "/logos/wolters-kluwer.svg", url: "https://www.wolterskluwer.com/" },
     // Healthcare & Life Sciences - popular in position 6 (2nd column)
-    { name: "Epic / Cerner", industry: "Healthcare & Life Sciences", popular: true },
-    { name: "Infor Cloverleaf", industry: "Healthcare & Life Sciences" },
-    { name: "Veeva Systems", industry: "Healthcare & Life Sciences" },
-    { name: "Workday Healthcare", industry: "Healthcare & Life Sciences" },
-    { name: "ServiceNow Healthcare", industry: "Healthcare & Life Sciences" },
+    { name: "Epic / Cerner", industry: "Healthcare & Life Sciences", popular: true, url: "https://www.epic.com" },
+    { name: "Infor Cloverleaf", industry: "Healthcare & Life Sciences", url: "https://www.infor.com/products/cloverleaf" },
+    { name: "Veeva Systems", industry: "Healthcare & Life Sciences", url: "https://www.veeva.com" },
+    { name: "Workday Healthcare", industry: "Healthcare & Life Sciences", url: "https://www.workday.com/en-us/solutions/industries/healthcare.html" },
+    { name: "ServiceNow Healthcare", industry: "Healthcare & Life Sciences", url: "https://www.servicenow.com/products/healthcare-life-sciences.html" },
     // Energy & Utilities - popular in position 13 (4th column)
-    { name: "IFS Cloud", industry: "Energy & Utilities" },
-    { name: "SAP S/4HANA for Energy", industry: "Energy & Utilities" },
-    { name: "Oracle Utilities", industry: "Energy & Utilities", popular: true },
-    { name: "Enablon", industry: "Energy & Utilities", logo: "/logos/enablon.png" },
-    { name: "GE Vernova", industry: "Energy & Utilities" },
+    { name: "IFS Cloud", industry: "Energy & Utilities", url: "https://www.ifs.com/ifs-cloud" },
+    { name: "SAP S/4HANA for Energy", industry: "Energy & Utilities", url: "https://www.sap.com/industries/utilities.html" },
+    { name: "Oracle Utilities", industry: "Energy & Utilities", popular: true, url: "https://www.oracle.com/utilities/" },
+    { name: "Enablon", industry: "Energy & Utilities", logo: "/logos/enablon.png", url: "https://www.wolterskluwer.com/en/solutions/enablon" },
+    { name: "GE Vernova", industry: "Energy & Utilities", url: "https://www.gevernova.com" },
   ]
 
   return (
