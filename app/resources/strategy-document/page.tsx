@@ -99,13 +99,13 @@ export default function StrategyDocumentPage() {
             </p>
 
             {/* Dashboard Preview */}
-            <div className="relative rounded-xl overflow-hidden shadow-2xl border border-slate-700/50">
+            <div className="relative rounded-xl overflow-hidden shadow-2xl border border-slate-700/50 scale-110 origin-top-left">
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent z-10 pointer-events-none" />
               <Image
                 src="/images/jo-dashboard-preview.png"
                 alt="Jo Platform Dashboard"
-                width={800}
-                height={500}
+                width={1200}
+                height={750}
                 className="w-full h-auto"
               />
             </div>
