@@ -50,15 +50,15 @@ export function IntegrationsSection() {
                         MOST POPULAR
                       </Badge>
                     )}
-                    <div className="w-40 h-40 mb-6 relative rounded-xl bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center p-8 group-hover:shadow-inner transition-all border border-slate-200">
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={integration.logo || `/.jpg?key=ohhmj&height=160&width=160&query=${encodeURIComponent(integration.name + " logo")}`}
-                          alt={`${integration.name} logo`}
-                          fill
-                          className="object-contain"
-                        />
-                      </div>
+                    <div className="w-48 h-32 mb-6 relative rounded-lg bg-white flex items-center justify-center p-4 group-hover:shadow-md transition-all border-2 border-slate-200">
+                      <Image
+                        src={integration.logo || `/.jpg?key=ohhmj&height=128&width=192&query=${encodeURIComponent(integration.name + " logo")}`}
+                        alt={`${integration.name} logo`}
+                        width={192}
+                        height={128}
+                        className="object-contain max-w-full max-h-full"
+                        style={{ width: 'auto', height: 'auto' }}
+                      />
                     </div>
                     <h4 className="font-semibold text-gray-900 text-base leading-tight group-hover:text-blue-600 transition-colors mb-2">
                       {integration.name}
