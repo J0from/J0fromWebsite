@@ -50,12 +50,12 @@ export function IntegrationsSection() {
                         MOST POPULAR
                       </Badge>
                     )}
-                    <div className="w-24 h-24 mb-6 relative rounded-xl overflow-hidden bg-slate-50 flex items-center justify-center p-4 group-hover:bg-slate-100 transition-colors">
+                    <div className="w-40 h-40 mb-6 relative rounded-xl overflow-hidden bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center p-6 group-hover:shadow-inner transition-all border border-slate-200">
                       <Image
-                        src={integration.logo || `/.jpg?key=ohhmj&height=96&width=96&query=${encodeURIComponent(integration.name + " logo")}`}
+                        src={integration.logo || `/.jpg?key=ohhmj&height=160&width=160&query=${encodeURIComponent(integration.name + " logo")}`}
                         alt={`${integration.name} logo`}
-                        width={96}
-                        height={96}
+                        width={160}
+                        height={160}
                         className="object-contain"
                       />
                     </div>
