@@ -277,14 +277,15 @@ export default function ConsultingGetMeetingsPage() {
               {activeTab === "growth" ? "Book Your Strategy Session" : "Get Your Operations Audit"}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button
-              variant="outline"
-              size="hero"
-              className="border-white text-white hover:bg-white/10 bg-transparent"
-              onClick={() => window.open("/enterprise/whitepaper", "_blank")}
-            >
-              Download Strategy Document
-            </Button>
+            <Link href="/resources/strategy-document">
+              <Button
+                variant="outline"
+                size="hero"
+                className="border-white text-white hover:bg-white/10 bg-transparent"
+              >
+                Download Strategy Document
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
