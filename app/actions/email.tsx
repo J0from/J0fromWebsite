@@ -79,7 +79,7 @@ export async function sendContactFormEmail(formData: ContactFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Contact Form <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Contact Form: ${formData.subject}`,
       html: `
@@ -156,7 +156,7 @@ export async function sendFractionalFormEmail(formData: FractionalFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Predictable Pipeline <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Fractional Consulting Inquiry - ${formData.company}`,
       html: `
@@ -248,7 +248,7 @@ export async function sendWhitepaperLeadEmail(formData: WhitepaperFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Enterprise <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Whitepaper Download - ${formData.company}`,
       html: `
@@ -325,7 +325,7 @@ export async function submitWhitepaperForm(formData: WhitepaperDownloadFormData)
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Enterprise Whitepaper <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Whitepaper Download Request - ${formData.company}`,
       html: `
@@ -421,7 +421,7 @@ export async function sendStrategyDocumentLeadEmail(formData: StrategyDocumentFo
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Strategy Document <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Strategy Document Download - ${formData.company}`,
       html: `
@@ -508,7 +508,7 @@ export async function sendGrowthFormEmail(formData: GrowthFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Growth Consulting <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Growth Consulting Inquiry - ${formData.company}`,
       html: `
