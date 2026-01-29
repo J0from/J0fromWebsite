@@ -2,4 +2,10 @@ import "server-only"
 
 import Stripe from "stripe"
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY
+
+if (!stripeSecretKey) {
+  console.warn("STRIPE_SECRET_KEY is not set. Stripe functionality will be disabled.")
+}
+
+export const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null

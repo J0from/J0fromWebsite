@@ -1,4 +1,4 @@
-# Jo From Design System
+# Jo from Design System
 
 A comprehensive design kit for building the Jo From application and login pages that align with the website's brand identity.
 
@@ -7,7 +7,7 @@ A comprehensive design kit for building the Jo From application and login pages 
 ## Brand Identity
 
 ### Brand Name
-**Jo From** - Machine staffing firm.
+**Jo from** - Machine staffing firm.
 
 ### Tagline
 "Human + Machine collaboration for modern businesses"

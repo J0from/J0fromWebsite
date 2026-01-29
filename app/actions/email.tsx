@@ -79,7 +79,7 @@ export async function sendContactFormEmail(formData: ContactFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Contact Form <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Contact Form: ${formData.subject}`,
       html: `
@@ -156,7 +156,7 @@ export async function sendFractionalFormEmail(formData: FractionalFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Predictable Pipeline <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Fractional Consulting Inquiry - ${formData.company}`,
       html: `
@@ -248,7 +248,7 @@ export async function sendWhitepaperLeadEmail(formData: WhitepaperFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Enterprise <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Whitepaper Download - ${formData.company}`,
       html: `
@@ -325,7 +325,7 @@ export async function submitWhitepaperForm(formData: WhitepaperDownloadFormData)
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Enterprise Whitepaper <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Whitepaper Download Request - ${formData.company}`,
       html: `
@@ -397,6 +397,102 @@ export async function submitWhitepaperForm(formData: WhitepaperDownloadFormData)
   }
 }
 
+interface StrategyDocumentFormData {
+  firstName: string
+  lastName: string
+  email: string
+  company: string
+  jobTitle: string
+  phone?: string
+}
+
+export async function sendStrategyDocumentLeadEmail(formData: StrategyDocumentFormData) {
+  try {
+    const resend = await getResendClient()
+
+    if (!resend) {
+      console.log("[v0] Mock email send (no API key configured):", formData)
+      return {
+        success: true,
+        data: { id: "mock-email-id" },
+        message: "Email simulated successfully (no API key configured)",
+      }
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: "Jo from Strategy Document <onboarding@resend.dev>",
+      to: ["hello@jofrom.io"],
+      replyTo: formData.email,
+      subject: `Strategy Document Download - ${formData.company}`,
+      html: `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <style>
+              body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+              .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+              .header { background: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; }
+              .content { background: #f8fafc; padding: 30px; border-radius: 0 0 8px 8px; }
+              .field { margin-bottom: 20px; }
+              .label { font-weight: bold; color: #475569; margin-bottom: 5px; }
+              .value { color: #1e293b; }
+              .highlight { background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #3b82f6; }
+              .badge { display: inline-block; background: #10b981; color: white; padding: 6px 16px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+            </style>
+          </head>
+          <body>
+            <div class="container">
+              <div class="header">
+                <h2 style="margin: 0;">New Strategy Document Lead</h2>
+                <p style="margin: 10px 0 0 0; opacity: 0.9;">GTM Strategy Working Session Document</p>
+              </div>
+              <div class="content">
+                <div class="field">
+                  <span class="badge">NEW LEAD</span>
+                </div>
+                
+                <div class="field">
+                  <div class="label">Contact Information</div>
+                  <div class="highlight">
+                    <strong>${formData.firstName} ${formData.lastName}</strong><br>
+                    ${formData.jobTitle}<br>
+                    <a href="mailto:${formData.email}">${formData.email}</a>
+                    ${formData.phone ? `<br><a href="tel:${formData.phone}">${formData.phone}</a>` : ""}
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <div class="label">Company</div>
+                  <div class="value">
+                    <strong>${formData.company}</strong>
+                  </div>
+                </div>
+                
+                <div class="field" style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
+                  <p style="color: #64748b; font-size: 14px; margin: 0;">
+                    This lead downloaded the GTM Strategy Working Session document. 
+                    They may be interested in consulting services - follow up to discuss their specific needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
+      `,
+    })
+
+    if (error) {
+      console.error("[v0] Resend error:", error)
+      return { success: false, message: error.message }
+    }
+
+    return { success: true, data }
+  } catch (error) {
+    console.error("[v0] Error sending email:", error)
+    return { success: false, message: "Failed to send email" }
+  }
+}
+
 export async function sendGrowthFormEmail(formData: GrowthFormData) {
   try {
     const resend = await getResendClient()
@@ -412,7 +508,7 @@ export async function sendGrowthFormEmail(formData: GrowthFormData) {
 
     const { data, error } = await resend.emails.send({
       from: "Jo from Growth Consulting <onboarding@resend.dev>",
-      to: ["jeremy@jofrom.io"],
+      to: ["hello@jofrom.io"],
       replyTo: formData.email,
       subject: `Growth Consulting Inquiry - ${formData.company}`,
       html: `

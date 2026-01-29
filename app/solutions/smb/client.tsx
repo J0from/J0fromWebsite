@@ -119,8 +119,8 @@ export default function SMBPageClient() {
       <nav className="flex justify-between items-center p-4 sm:p-6 max-w-6xl mx-auto">
         <Link href="/" className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center">
           J
-          <div className="relative mx-1">
-            <Image src="/qubit.png" alt="Qubit" width={16} height={16} className="sm:w-5 sm:h-5 brightness-0" />
+          <div className="relative mx-1 w-4 h-4 sm:w-5 sm:h-5">
+            <Image src="/qubit.png" alt="Qubit" fill className="brightness-0 object-contain" />
             <div
               className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 mix-blend-normal opacity-100"
               style={{
@@ -294,12 +294,11 @@ export default function SMBPageClient() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 drop-shadow-lg">
             Meet Jo
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 opacity-90 drop-shadow-md">
-            Your Office Dream Team
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 opacity-90 drop-shadow-md">
+            Your Machine Dream Team
           </h2>
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-95 max-w-3xl mx-auto leading-relaxed drop-shadow-sm px-4">
-            We are a digital staffing firms that handles marketing, sales, ops, and bookkeeping—so you can focus on
-            growth.
+            We are a Machine Staffing Firm.
           </p>
           <Button variant="destructive" size="hero" asChild>
             <Link href="/solutions/smb/purchase">
@@ -389,7 +388,7 @@ export default function SMBPageClient() {
             Complete Department Coverage
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 text-center mb-12 sm:mb-16 max-w-3xl mx-auto px-4">
-            Specialized agents for every department
+            Specialized Jo's for every department
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8 auto-rows-fr">
@@ -476,7 +475,7 @@ export default function SMBPageClient() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Top Jo Agents:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Top Jo's:</h4>
                       <div className="space-y-2">
                         <div className="text-center">
                           <span className="text-sm text-gray-700">
@@ -504,7 +503,7 @@ export default function SMBPageClient() {
 
                   <div className="border-t pt-6 bg-gradient-to-r from-blue-50 to-purple-50 -mx-6 sm:-mx-8 px-6 sm:px-8 -mb-6 sm:-mb-8 pb-6 sm:pb-8 rounded-b-lg mt-auto">
                     <div className="text-center mb-4">
-                      <div className="text-xs text-gray-500">3-5 agents typically needed</div>
+                      <div className="text-xs text-gray-500">3-5 Jo's typically needed</div>
                     </div>
                     <Button variant="gradient" size="default" className="w-full" asChild>
                       <Link href="/solutions/smb/purchase">Start Solo Journey</Link>
@@ -544,7 +543,7 @@ export default function SMBPageClient() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Top Jo Agents:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Top Jo's:</h4>
                       <div className="space-y-2">
                         <div className="text-center">
                           <span className="text-sm text-gray-700">
@@ -577,7 +576,7 @@ export default function SMBPageClient() {
 
                   <div className="border-t pt-6 bg-gradient-to-r from-yellow-50 to-orange-50 -mx-6 sm:-mx-8 px-6 sm:px-8 -mb-6 sm:-mb-8 pb-6 sm:pb-8 rounded-b-lg mt-auto">
                     <div className="text-center mb-4">
-                      <div className="text-xs text-gray-500">6-9 agents typically needed</div>
+                      <div className="text-xs text-gray-500">6-9 Jo's typically needed</div>
                     </div>
                     <Button variant="gradient" size="default" className="w-full" asChild>
                       <Link href="/solutions/smb/purchase">Scale Your Business</Link>
@@ -612,11 +611,11 @@ export default function SMBPageClient() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">All Jo Agents:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">All Jo's:</h4>
                       <div className="space-y-2">
                         <div className="text-center">
                           <span className="text-sm text-gray-700">
-                            <strong>Complete Suite:</strong> All 9 department agents
+                            <strong>Complete Suite:</strong> All 9 department Jo's
                           </span>
                         </div>
                         <div className="text-center">
@@ -645,7 +644,7 @@ export default function SMBPageClient() {
 
                   <div className="border-t pt-6 bg-gradient-to-r from-purple-50 to-indigo-50 -mx-6 sm:-mx-8 px-6 sm:px-8 -mb-6 sm:-mb-8 pb-6 sm:pb-8 rounded-b-lg mt-auto">
                     <div className="text-center mb-4">
-                      <div className="text-xs text-gray-500">All 9 agents + custom features</div>
+                      <div className="text-xs text-gray-500">All 9 Jo's + custom features</div>
                     </div>
                     <Button variant="gradient" size="default" className="w-full" asChild>
                       <Link href="/solutions/smb/purchase">Enterprise Ready</Link>
@@ -683,7 +682,7 @@ export default function SMBPageClient() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Portfolio Efficiency Agents:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Portfolio Efficiency Jo's:</h4>
                       <div className="space-y-2">
                         <div className="text-center">
                           <span className="text-sm text-gray-700">
@@ -751,7 +750,7 @@ export default function SMBPageClient() {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-3">Transformation Agents:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-3">Transformation Jo's:</h4>
                       <div className="space-y-2">
                         <div className="text-center">
                           <span className="text-sm text-gray-700">
@@ -837,7 +836,7 @@ export default function SMBPageClient() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                   2
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Activate an Agent</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Activate a Jo</h3>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Choose a template or describe what you need. Setup takes seconds.
                 </p>

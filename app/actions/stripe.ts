@@ -4,6 +4,10 @@ import { stripe } from "@/lib/stripe"
 import { PRODUCTS } from "@/lib/products"
 
 export async function startCheckoutSession(productId: string): Promise<string> {
+  if (!stripe) {
+    throw new Error("Stripe is not configured. Please set the STRIPE_SECRET_KEY environment variable.")
+  }
+
   const product = PRODUCTS.find((p) => p.id === productId)
 
   if (!product) {

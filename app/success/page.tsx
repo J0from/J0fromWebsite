@@ -25,11 +25,11 @@ export default function SuccessPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Navigation */}
-      <nav className="flex justify-between items-center p-6 max-w-4xl mx-auto">
-        <Link href="/" className="text-2xl font-bold text-slate-900 flex items-center">
+      <nav className="flex justify-between items-center p-4 sm:p-6 max-w-4xl mx-auto">
+        <Link href="/" className="text-xl sm:text-2xl font-bold text-slate-900 flex items-center">
           J
-          <div className="relative mx-1">
-            <Image src="/qubit.png" alt="Qubit" width={20} height={20} className="brightness-0" />
+          <div className="relative mx-1 w-4 h-4 sm:w-5 sm:h-5">
+            <Image src="/qubit.png" alt="Qubit" fill className="brightness-0 object-contain" />
             <div
               className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 mix-blend-normal opacity-100"
               style={{

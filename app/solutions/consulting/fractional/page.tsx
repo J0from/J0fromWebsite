@@ -234,7 +234,7 @@ export default function FractionalOperationsPage() {
                   </div>
                 </div>
                 <div className="space-y-4">
-                  {["Expert operations team", "AI-powered augmentation", "Financial clarity"].map((item, i) => (
+                  {["Expert operations team", "Jo powered augmentation", "Financial clarity"].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-6 h-6 bg-blue-50 rounded-full flex items-center justify-center">
                         <Check size={14} className="text-blue-600" />
@@ -588,7 +588,7 @@ export default function FractionalOperationsPage() {
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {[
-                  { aspect: "Cost", frac: "$3-7K/month", diy: "Expensive 'Free'", ft: "$80-150K+" },
+                  { aspect: "Cost", frac: "$1.5-3K/month", diy: "Expensive 'Free'", ft: "$80-150K+" },
                   { aspect: "Expertise", frac: "Immediate Expert", diy: "Learning curve", ft: "Ramp-up needed" },
                   { aspect: "Scalability", frac: "Grows with you", diy: "Founder Bottleneck", ft: "Fixed Cost" },
                   { aspect: "Systems & Tech", frac: "Included (Jo from)", diy: "Manual work", ft: "Add-on cost" },
@@ -1181,7 +1181,7 @@ export default function FractionalOperationsPage() {
                   aria-label="Follow us on X"
                 >
                   <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.244H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </Link>
                 <Link

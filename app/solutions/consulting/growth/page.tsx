@@ -33,6 +33,7 @@ import {
   Handshake,
   Zap,
   RefreshCw,
+  HelpCircle,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -595,30 +596,34 @@ export default function GrowthPage() {
               </Card>
             </div>
 
-            <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                    <Clock className="text-blue-600" size={20} />
+            {/* MERGED CODE START */}
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="border-2 border-blue-200 bg-gradient-to-br from-blue-50 to-white h-full">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6">
+                    <Clock className="text-blue-600" size={28} />
                   </div>
-                  <div>
-                    <p className="text-slate-900 font-semibold mb-2">Minimum 3-Month Commitment</p>
-                    <p className="text-slate-600 leading-relaxed">
-                      Growth campaigns need time to mature and optimize. Our 3-month minimum ensures we can deliver
-                      consistent, predictable results.
-                    </p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Minimum 3-Month Commitment</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed flex-grow">
+                    Growth campaigns need time to mature and optimize. Our 3-month minimum ensures we can deliver
+                    consistent, predictable results.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white h-full">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6">
+                    <HelpCircle className="text-purple-600" size={28} />
                   </div>
-                </div>
-                <div className="mt-6 pt-6 border-t border-blue-200">
-                  <div className="text-center space-y-2">
-                    <h3 className="text-xl font-bold text-slate-900">Not sure which option is right for you?</h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      Book a call and we'll recommend the best fit based on your goals, capacity, and market.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Not sure which option is right for you?</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed flex-grow">
+                    Book a call and we'll recommend the best fit based on your goals, capacity, and market.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            {/* MERGED CODE END */}
           </div>
         </div>
       </section>
@@ -816,7 +821,7 @@ export default function GrowthPage() {
                     ))}
                   </ul>
                   <p className="text-sm text-slate-600 pt-4">
-                    <strong>Perfect for:</strong> $2M-$10M+ revenue businesses serious about scale
+                    <strong>Perfect for:</strong> $2M-$10M+ businesses serious about scale
                   </p>
                 </div>
                 <Button
