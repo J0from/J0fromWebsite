@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, ArrowRight, DollarSign } from "lucide-react"
+import { ArrowLeft, ArrowRight, DollarSign, User, Building2, Factory, TrendingUp, Landmark } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect } from "react"
@@ -454,8 +454,8 @@ export default function SMBPageClient() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full -translate-y-10 translate-x-10 opacity-50"></div>
                 <CardContent className="p-0 flex flex-col h-full relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-2xl">
-                      👤
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white">
+                      <User className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Solopreneur</h3>
@@ -522,8 +522,8 @@ export default function SMBPageClient() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full -translate-y-10 translate-x-10 opacity-50"></div>
                 <CardContent className="p-0 flex flex-col h-full relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-6 mt-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white text-2xl">
-                      🏢
+                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center text-white">
+                      <Building2 className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Small Business</h3>
@@ -590,8 +590,8 @@ export default function SMBPageClient() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-indigo-100 rounded-full -translate-y-10 translate-x-10 opacity-50"></div>
                 <CardContent className="p-0 flex flex-col h-full relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center text-white text-2xl">
-                      🏭
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center text-white">
+                      <Factory className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Medium Business</h3>
@@ -661,8 +661,8 @@ export default function SMBPageClient() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-100 to-emerald-100 rounded-full -translate-y-10 translate-x-10 opacity-50"></div>
                 <CardContent className="p-0 flex flex-col h-full relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center text-white text-2xl">
-                      🚀
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center text-white">
+                      <TrendingUp className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">VC Firms</h3>
@@ -729,8 +729,8 @@ export default function SMBPageClient() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-slate-100 to-gray-100 rounded-full -translate-y-10 translate-x-10 opacity-50"></div>
                 <CardContent className="p-0 flex flex-col h-full relative z-10 text-center">
                   <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-gradient-to-br from-slate-600 to-gray-600 rounded-lg flex items-center justify-center text-white text-2xl">
-                      🏛️
+                    <div className="w-12 h-12 bg-gradient-to-br from-slate-600 to-gray-600 rounded-lg flex items-center justify-center text-white">
+                      <Landmark className="w-6 h-6" />
                     </div>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900">PE Firms</h3>
