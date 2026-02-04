@@ -476,26 +476,22 @@ export default function SMBPageClient() {
 
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Top Jo's:</h4>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Finance:</strong> Invoice tracking & expense categorization
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Finance</div>
+                          <div className="text-sm text-gray-600">Invoice tracking & expense categorization</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Marketing:</strong> Social media content & email campaigns
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Marketing</div>
+                          <div className="text-sm text-gray-600">Social media content & email campaigns</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Support:</strong> Customer inquiry responses
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Support</div>
+                          <div className="text-sm text-gray-600">Customer inquiry responses</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Accounting:</strong> Basic bookkeeping & tax prep
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Accounting</div>
+                          <div className="text-sm text-gray-600">Basic bookkeeping & tax prep</div>
                         </div>
                       </div>
                     </div>
@@ -544,31 +540,26 @@ export default function SMBPageClient() {
 
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Top Jo's:</h4>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>HR:</strong> Employee onboarding & policy management
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">HR</div>
+                          <div className="text-sm text-gray-600">Employee onboarding & policy management</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Sales:</strong> Lead management & follow-up automation
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Sales</div>
+                          <div className="text-sm text-gray-600">Lead management & follow-up automation</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Operations:</strong> Workflow optimization & SOPs
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Operations</div>
+                          <div className="text-sm text-gray-600">Workflow optimization & SOPs</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Finance:</strong> Cash flow forecasting & budgeting
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Finance</div>
+                          <div className="text-sm text-gray-600">Cash flow forecasting & budgeting</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>IT:</strong> Basic security & asset management
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">IT</div>
+                          <div className="text-sm text-gray-600">Basic security & asset management</div>
                         </div>
                       </div>
                     </div>
@@ -612,31 +603,26 @@ export default function SMBPageClient() {
 
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">All Jo's:</h4>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Complete Suite:</strong> All 9 department Jo's
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Complete Suite</div>
+                          <div className="text-sm text-gray-600">All 9 department Jo's</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Advanced Features:</strong> Custom workflows & integrations
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Advanced Features</div>
+                          <div className="text-sm text-gray-600">Custom workflows & integrations</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Compliance:</strong> SOC 2, GDPR, industry-specific
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Compliance</div>
+                          <div className="text-sm text-gray-600">SOC 2, GDPR, industry-specific</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Analytics:</strong> Cross-department insights & reporting
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Analytics</div>
+                          <div className="text-sm text-gray-600">Cross-department insights & reporting</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Priority Support:</strong> Dedicated success manager
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Priority Support</div>
+                          <div className="text-sm text-gray-600">Dedicated success manager</div>
                         </div>
                       </div>
                     </div>
@@ -683,31 +669,26 @@ export default function SMBPageClient() {
 
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Portfolio Efficiency Jo's:</h4>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Finance:</strong> Automated financial reporting & burn rate optimization
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Finance</div>
+                          <div className="text-sm text-gray-600">Automated financial reporting & burn rate optimization</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Operations:</strong> Process standardization & efficiency metrics
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Operations</div>
+                          <div className="text-sm text-gray-600">Process standardization & efficiency metrics</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>HR:</strong> Rapid scaling & talent acquisition automation
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">HR</div>
+                          <div className="text-sm text-gray-600">Rapid scaling & talent acquisition automation</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Sales:</strong> Revenue acceleration & pipeline optimization
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Sales</div>
+                          <div className="text-sm text-gray-600">Revenue acceleration & pipeline optimization</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Marketing:</strong> Growth marketing & customer acquisition efficiency
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Marketing</div>
+                          <div className="text-sm text-gray-600">Growth marketing & customer acquisition efficiency</div>
                         </div>
                       </div>
                     </div>
@@ -751,31 +732,26 @@ export default function SMBPageClient() {
 
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Transformation Jo's:</h4>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Operations:</strong> Process optimization & cost reduction automation
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Operations</div>
+                          <div className="text-sm text-gray-600">Process optimization & cost reduction automation</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Finance:</strong> Margin analysis & profitability improvement
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Finance</div>
+                          <div className="text-sm text-gray-600">Margin analysis & profitability improvement</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>HR:</strong> Workforce optimization & productivity enhancement
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">HR</div>
+                          <div className="text-sm text-gray-600">Workforce optimization & productivity enhancement</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>Accounting:</strong> Financial consolidation & reporting automation
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">Accounting</div>
+                          <div className="text-sm text-gray-600">Financial consolidation & reporting automation</div>
                         </div>
                         <div className="text-center">
-                          <span className="text-sm text-gray-700">
-                            <strong>IT:</strong> Technology standardization & digital transformation
-                          </span>
+                          <div className="text-sm font-semibold text-gray-900">IT</div>
+                          <div className="text-sm text-gray-600">Technology standardization & digital transformation</div>
                         </div>
                       </div>
                     </div>
