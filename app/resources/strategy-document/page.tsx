@@ -70,7 +70,7 @@ export default function StrategyDocumentPage() {
           <Link href="/" className="text-xl sm:text-2xl font-bold text-white flex items-center">
             J
             <div className="relative mx-1 w-4 h-4 sm:w-5 sm:h-5">
-              <Image src="/qubit.png" alt="Qubit" fill className="brightness-0 invert object-contain" />
+              <Image src="/qubit.png" alt="Qubit" fill sizes="20px" className="brightness-0 invert object-contain" />
             </div>
           </Link>
         </div>
