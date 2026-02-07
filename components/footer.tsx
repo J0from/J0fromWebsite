@@ -8,8 +8,9 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Brand Section */}
         <div className="mb-10">
-          <Link href="/" className="text-xl font-bold text-white flex items-center mb-2">
-            <Logo width={16} height={16} className="text-white [&>span]:text-white" />
+          <Link href="/" className="text-xl font-bold text-white flex items-center gap-0 mb-2">
+            <Logo width={22} height={22} className="text-white [&>span]:text-white" />
+            <span>from</span>
           </Link>
           <p className="text-sm text-slate-400">
             <strong>Human + Machine</strong> staffing.
@@ -36,17 +37,10 @@ export function Footer() {
                 <Link href="/solutions/consulting" className="text-slate-400 hover:text-white transition-colors">
                   Staffing
                 </Link>
-                <ul className="mt-2 ml-3 space-y-2">
-                  <li>
-                    <Link href="/solutions/consulting/fractional" className="text-slate-400 hover:text-white transition-colors">
-                      Hire Talent
-                    </Link>
-                  </li>
-                </ul>
               </li>
               <li>
-                <Link href="/hire" className="text-slate-400 hover:text-white transition-colors">
-                  Hire
+                <Link href="/solutions/consulting/fractional" className="text-slate-400 hover:text-white transition-colors">
+                  Hire Talent
                 </Link>
               </li>
             </ul>
