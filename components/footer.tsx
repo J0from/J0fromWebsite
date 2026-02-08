@@ -28,7 +28,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/hire" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/hire" className="text-slate-400 hover:text-white transition-colors" prefetch={true}>
                   Hire Talent
                 </Link>
               </li>
