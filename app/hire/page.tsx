@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { HirePageClient } from "@/components/hire/hire-page-client"
 
 export const metadata: Metadata = {
-  title: "Hire Contract Workers | Jo from",
+  title: "Hire Talent | Jo from - Healthcare, Manufacturing & Energy Staffing",
   description:
-    "Deploy skilled contract workers for engineering, healthcare, production, and energy operations. Field-ready, compliance-verified, and augmented by our platform.",
+    "We place skilled workers in healthcare, manufacturing, and energy -- highly regulated, thin-margin industries where the jobs are essential. Compliance-verified and augmented by our platform.",
   keywords: [
     "contract workers",
     "hire engineers",
@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     "workforce deployment",
   ],
   openGraph: {
-    title: "Hire Contract Workers | Jo from",
+    title: "Hire Talent | Jo from - Healthcare, Manufacturing & Energy Staffing",
     description:
-      "Deploy skilled contract workers for engineering, healthcare, production, and energy operations.",
+      "We place skilled workers in healthcare, manufacturing, and energy -- highly regulated industries where the jobs are essential.",
     type: "website",
     url: "https://www.jofrom.io/hire",
     siteName: "Jo from",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hire Contract Workers | Jo from",
+    title: "Hire Talent | Jo from - Healthcare, Manufacturing & Energy Staffing",
     description:
-      "Deploy skilled contract workers for engineering, healthcare, production, and energy operations.",
+      "We place skilled workers in healthcare, manufacturing, and energy -- highly regulated industries where the jobs are essential.",
   },
   alternates: {
     canonical: "https://www.jofrom.io/hire",
