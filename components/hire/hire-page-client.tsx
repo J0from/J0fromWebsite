@@ -223,8 +223,8 @@ export function HirePageClient() {
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/energy-20and-20infastructure.webp"
-            alt="Industrial workers on site"
+            src="/images/img-services-emergency-department-banner.avif"
+            alt="Healthcare professionals on site"
             fill
             className="object-cover"
             priority
