@@ -1,11 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import {
-  Menu,
-  X,
   ArrowRight,
   Cpu,
   Stethoscope,
@@ -23,26 +21,26 @@ import {
   Fuel,
   Server,
   CircuitBoard,
-  Activity,
+  Activity as ActivityIcon,
   Thermometer,
   Hammer,
   Gauge,
   Bolt,
   Cable,
 } from "lucide-react"
-import { ParticleBackground } from "@/components/particle-background"
 import { Logo } from "@/components/logo"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 
 const jobCategories = [
   {
     id: "engineering",
     title: "Engineering & Tech",
-    subtitle: "SECTOR_01",
+    subtitle: "Sector 01",
     description:
       "Deploy skilled engineers and technical specialists for infrastructure, software systems, and advanced technology projects.",
-    image: "/images/hire-engineering.jpg",
+    image: "/images/enrgey-20.jpg",
     icon: Cpu,
     roles: [
       "Systems Engineers",
@@ -58,10 +56,10 @@ const jobCategories = [
   {
     id: "healthcare",
     title: "Healthcare",
-    subtitle: "SECTOR_02",
+    subtitle: "Sector 02",
     description:
       "Certified healthcare professionals for hospitals, clinics, and field medical operations across all specialties.",
-    image: "/images/hire-healthcare.jpg",
+    image: "/images/img-services-emergency-department-banner.avif",
     icon: Stethoscope,
     roles: [
       "Travel Nurses",
@@ -77,10 +75,10 @@ const jobCategories = [
   {
     id: "production",
     title: "Production & Manufacturing",
-    subtitle: "SECTOR_03",
+    subtitle: "Sector 03",
     description:
       "Experienced production operators and manufacturing specialists for high-output, compliance-driven environments.",
-    image: "/images/hire-production.jpg",
+    image: "/images/food.jpg",
     icon: Factory,
     roles: [
       "Production Supervisors",
@@ -95,11 +93,11 @@ const jobCategories = [
   },
   {
     id: "energy",
-    title: "Energy & Field Operations",
-    subtitle: "SECTOR_04",
+    title: "Energy & Field Ops",
+    subtitle: "Sector 04",
     description:
       "Certified field workers for energy infrastructure, utilities, and large-scale field deployment projects.",
-    image: "/images/hire-energy.jpg",
+    image: "/images/energy-20and-20infastructure.webp",
     icon: Zap,
     roles: [
       "Lineworkers",
@@ -118,342 +116,344 @@ const benefits = [
   {
     icon: Clock,
     title: "Rapid Deployment",
-    description: "Contract workers onboarded and field-ready within 48 hours of assignment confirmation.",
+    description:
+      "Contract workers onboarded and field-ready within 48 hours of assignment confirmation.",
   },
   {
     icon: Shield,
     title: "Compliance Verified",
-    description: "All personnel pre-screened for industry certifications, background checks, and regulatory requirements.",
+    description:
+      "All personnel pre-screened for industry certifications, background checks, and regulatory requirements.",
   },
   {
     icon: MapPin,
     title: "Nationwide Coverage",
-    description: "Operational reach across all 50 states with local field teams and regional coordination centers.",
+    description:
+      "Operational reach across all 50 states with local field teams and regional coordination centers.",
   },
   {
     icon: Cog,
     title: "Augmented by Jo",
-    description: "Our AI platform handles scheduling, compliance tracking, and workforce optimization in real-time.",
+    description:
+      "Our AI platform handles scheduling, compliance tracking, and workforce optimization in real-time.",
   },
 ]
 
 const processSteps = [
   {
     step: "01",
-    title: "INITIATE",
-    description: "Submit your workforce requirements through our mission briefing portal.",
+    title: "Initiate",
+    description:
+      "Submit your workforce requirements through our mission briefing portal.",
   },
   {
     step: "02",
-    title: "MATCH",
-    description: "Our AI-augmented system identifies and vets the ideal contract specialists.",
+    title: "Match",
+    description:
+      "Our AI-augmented system identifies and vets the ideal contract specialists.",
   },
   {
     step: "03",
-    title: "DEPLOY",
-    description: "Workers are mobilized to your site with all credentials and clearances verified.",
+    title: "Deploy",
+    description:
+      "Workers are mobilized to your site with all credentials and clearances verified.",
   },
   {
     step: "04",
-    title: "MONITOR",
-    description: "Real-time performance tracking and workforce optimization through our platform.",
+    title: "Monitor",
+    description:
+      "Real-time performance tracking and workforce optimization through our platform.",
   },
 ]
 
+const industries = [
+  { icon: Wrench, label: "Maintenance" },
+  { icon: HardHat, label: "Construction" },
+  { icon: CircuitBoard, label: "Electronics" },
+  { icon: ActivityIcon, label: "Clinical" },
+  { icon: Fuel, label: "Oil & Gas" },
+  { icon: Server, label: "Data Centers" },
+  { icon: Thermometer, label: "HVAC" },
+  { icon: Hammer, label: "Fabrication" },
+  { icon: Gauge, label: "Utilities" },
+  { icon: Bolt, label: "Electrical" },
+  { icon: Cable, label: "Telecom" },
+  { icon: Factory, label: "Processing" },
+]
+
 export function HirePageClient() {
-  const [scrolled, setScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState("engineering")
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
-  const scrollToSection = (id: string) => {
-    setIsMobileMenuOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  const activeCat = jobCategories.find((c) => c.id === activeCategory) || jobCategories[0]
+  const activeCat =
+    jobCategories.find((c) => c.id === activeCategory) || jobCategories[0]
 
   return (
-    <div className="min-h-screen bg-[#0a0e17] text-[#c8d6e5] font-sans selection:bg-cyan-900/50 selection:text-cyan-200">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Navigation */}
-      <nav
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-[#0a0e17]/95 backdrop-blur-md border-b border-cyan-900/30"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link href="/" className="flex items-center gap-3 group">
-              <ArrowLeft
-                size={18}
-                className="text-cyan-400 group-hover:-translate-x-1 transition-transform"
-              />
-              <span className="text-sm font-mono text-cyan-400 tracking-wider uppercase">
-                Mission Control
-              </span>
-            </Link>
-
-            <div className="hidden lg:flex items-center gap-8">
-              {["sectors", "process", "benefits"].map((section) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className="text-xs font-mono uppercase tracking-[0.2em] text-[#5a6a7a] hover:text-cyan-400 transition-colors"
-                >
-                  {section}
-                </button>
-              ))}
-              <button
-                onClick={() => scrollToSection("deploy")}
-                className="px-5 py-2 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-wider hover:bg-cyan-500/20 hover:border-cyan-400/50 transition-all"
-              >
-                Request Talent
-              </button>
-            </div>
-
-            <button
-              className="lg:hidden text-cyan-400"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle navigation menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+      <nav className="sticky top-0 z-50 flex justify-between items-center py-4 sm:py-6 px-6 md:px-12 lg:px-24 bg-slate-50/80 backdrop-blur-md border-b border-slate-200/50">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center gap-2 group">
+            <ArrowLeft
+              size={18}
+              className="text-slate-600 group-hover:-translate-x-1 transition-transform"
+            />
+            <span className="text-xl sm:text-2xl">
+              <Logo width={14} height={14} />
+            </span>
+          </Link>
         </div>
-
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-[#0a0e17]/98 backdrop-blur-md border-t border-cyan-900/30">
-            <div className="px-4 py-4 space-y-2">
-              {["sectors", "process", "benefits"].map((section) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className="block w-full text-left px-4 py-3 text-xs font-mono uppercase tracking-[0.2em] text-[#5a6a7a] hover:text-cyan-400 transition-colors"
-                >
-                  {section}
-                </button>
-              ))}
-              <button
-                onClick={() => scrollToSection("deploy")}
-                className="block w-full px-4 py-3 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-wider text-center mt-4"
-              >
-                Request Talent
-              </button>
-            </div>
-          </div>
-        )}
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Link href="https://app.jofrom.io/auth">
+            <Button
+              variant="ghost"
+              className="text-slate-900 hover:text-slate-700 text-sm sm:text-base px-3 sm:px-4"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link href="/company/contact">
+            <Button variant="gradient" className="text-sm sm:text-base px-3 sm:px-6">
+              Request Talent
+            </Button>
+          </Link>
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Image */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/hire-hero.jpg"
-            alt="Space command center"
+            src="/images/img-services-emergency-department-banner.avif"
+            alt="Healthcare professionals in an emergency department"
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e17]/60 via-[#0a0e17]/80 to-[#0a0e17]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/40" />
         </div>
 
-        {/* Particle overlay */}
-        <div className="absolute inset-0 opacity-40">
-          <ParticleBackground particleCount={60} particleColor="rgba(34, 211, 238, 0.4)" />
-        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full py-20">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-blue-300 mb-4">
+              Contract Workforce Solutions
+            </p>
 
-        {/* Scan line effect */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(34, 211, 238, 0.1) 2px, rgba(34, 211, 238, 0.1) 4px)",
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
-          <div className="max-w-4xl">
-            {/* Status indicator */}
-            <div className="flex items-center gap-3 mb-8">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
-              </span>
-              <span className="text-xs font-mono uppercase tracking-[0.3em] text-cyan-400">
-                Recruitment Active // All Sectors Online
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
-              Contract Workforce{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-300">
-                Deployment
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 text-balance">
+              Hire{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Contract Workers
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-[#7a8a9a] leading-relaxed max-w-2xl mb-10">
-              We deploy skilled contract workers for engineering, healthcare, production, and
-              energy operations -- field-ready, compliance-verified, and augmented by our platform.
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl mb-10">
+              We deploy skilled contract workers for engineering, healthcare,
+              production, and energy operations -- field-ready,
+              compliance-verified, and augmented by our platform.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => scrollToSection("deploy")}
-                className="group flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 text-[#0a0e17] font-bold text-sm uppercase tracking-wider hover:bg-cyan-400 transition-all"
-              >
-                Request Workers
-                <ArrowRight
-                  size={18}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </button>
-              <button
-                onClick={() => scrollToSection("sectors")}
-                className="flex items-center justify-center gap-3 px-8 py-4 border border-[#1e2a3a] text-[#7a8a9a] text-sm uppercase tracking-wider hover:border-cyan-500/30 hover:text-cyan-400 transition-all"
+              <Link href="/company/contact">
+                <Button
+                  variant="gradient"
+                  size="hero"
+                  className="gap-2"
+                >
+                  Request Workers
+                  <ArrowRight size={18} />
+                </Button>
+              </Link>
+              <Button
+                variant="outline"
+                size="hero"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent"
+                onClick={() =>
+                  document
+                    .getElementById("sectors")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Browse Sectors
-              </button>
-            </div>
-
-            {/* Stats row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-10 border-t border-[#1e2a3a]">
-              {[
-                { value: "1,200+", label: "Active Workers" },
-                { value: "48hr", label: "Deployment Time" },
-                { value: "50", label: "States Covered" },
-                { value: "99.2%", label: "Compliance Rate" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-2xl md:text-3xl font-bold text-white font-mono">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-[#5a6a7a] mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sectors Section */}
-      <section id="sectors" className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#1e2a3a]" />
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#5a6a7a]">
-              Deployment Sectors
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#1e2a3a]" />
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4 tracking-tight text-balance">
-            Specialized Workforce Categories
-          </h2>
-          <p className="text-center text-[#5a6a7a] mb-16 max-w-xl mx-auto text-pretty">
-            Select a sector to explore available contract roles and deployment capabilities.
-          </p>
-
-          {/* Category tabs */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+      {/* Sector Photo Strip */}
+      <section className="py-12 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {jobCategories.map((cat) => {
               const Icon = cat.icon
               return (
                 <button
                   key={cat.id}
+                  onClick={() => {
+                    setActiveCategory(cat.id)
+                    document.getElementById("sectors")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                  className="group relative aspect-[3/2] rounded-xl overflow-hidden"
+                >
+                  <Image
+                    src={cat.image}
+                    alt={cat.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                    <div>
+                      <div className="text-[10px] text-blue-300 uppercase tracking-wider mb-0.5">
+                        {cat.subtitle}
+                      </div>
+                      <div className="text-sm font-bold text-white">
+                        {cat.title}
+                      </div>
+                    </div>
+                    <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <Icon size={14} className="text-white" />
+                    </div>
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "1,200+", label: "Active Workers" },
+              { value: "48hr", label: "Deployment Time" },
+              { value: "50", label: "States Covered" },
+              { value: "99.2%", label: "Compliance Rate" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-blue-100 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sectors Section */}
+      <section id="sectors" className="py-16 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-balance">
+              Specialized{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Workforce Categories
+              </span>
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+              Select a sector to explore available contract roles and deployment
+              capabilities.
+            </p>
+          </div>
+
+          {/* Category Tabs */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {jobCategories.map((cat) => {
+              const Icon = cat.icon
+              const isActive = activeCategory === cat.id
+              return (
+                <button
+                  key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`group relative p-4 border transition-all text-left ${
-                    activeCategory === cat.id
-                      ? "bg-cyan-500/10 border-cyan-500/40 text-cyan-400"
-                      : "bg-[#0d1321] border-[#1e2a3a] text-[#5a6a7a] hover:border-[#2e3a4a] hover:text-[#7a8a9a]"
+                  className={`group relative p-5 rounded-lg border-2 transition-all text-left ${
+                    isActive
+                      ? "bg-white border-blue-300 shadow-md"
+                      : "bg-white border-slate-200 hover:border-blue-200 hover:shadow-sm"
                   }`}
                 >
-                  <Icon
-                    size={20}
-                    className={`mb-3 ${
-                      activeCategory === cat.id ? "text-cyan-400" : "text-[#3a4a5a]"
+                  <div
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
+                      isActive
+                        ? "bg-gradient-to-br from-blue-600 to-purple-600"
+                        : "bg-slate-100 group-hover:bg-blue-50"
                     }`}
-                  />
-                  <div className="text-[10px] font-mono uppercase tracking-[0.2em] mb-1 opacity-50">
+                  >
+                    <Icon
+                      size={20}
+                      className={
+                        isActive
+                          ? "text-white"
+                          : "text-slate-500 group-hover:text-blue-600"
+                      }
+                    />
+                  </div>
+                  <div className="text-xs text-slate-400 uppercase tracking-wider mb-1">
                     {cat.subtitle}
                   </div>
-                  <div className="text-sm font-semibold">{cat.title}</div>
-                  {activeCategory === cat.id && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-cyan-400" />
-                  )}
+                  <div
+                    className={`text-sm font-semibold ${
+                      isActive ? "text-slate-900" : "text-slate-700"
+                    }`}
+                  >
+                    {cat.title}
+                  </div>
                 </button>
               )
             })}
           </div>
 
-          {/* Active category detail */}
+          {/* Active Category Detail */}
           <div className="grid lg:grid-cols-2 gap-8">
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
               <Image
                 src={activeCat.image}
                 alt={activeCat.title}
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e17] via-[#0a0e17]/30 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="flex items-end justify-between">
-                  <div>
-                    <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">
-                      {activeCat.subtitle}
-                    </div>
-                    <div className="text-2xl font-bold text-white">{activeCat.title}</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                <div>
+                  <div className="text-xs text-blue-300 uppercase tracking-wider mb-1">
+                    {activeCat.subtitle}
                   </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold text-cyan-400 font-mono">
-                      {activeCat.stat}
-                    </div>
-                    <div className="text-[10px] font-mono text-[#5a6a7a] uppercase tracking-wider">
-                      {activeCat.statLabel}
-                    </div>
+                  <div className="text-2xl font-bold text-white">
+                    {activeCat.title}
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    {activeCat.stat}
+                  </div>
+                  <div className="text-xs text-slate-300">
+                    {activeCat.statLabel}
                   </div>
                 </div>
               </div>
-              {/* Corner accents */}
-              <div className="absolute top-3 left-3 w-6 h-6 border-t border-l border-cyan-500/30" />
-              <div className="absolute top-3 right-3 w-6 h-6 border-t border-r border-cyan-500/30" />
-              <div className="absolute bottom-3 left-3 w-6 h-6 border-b border-l border-cyan-500/30" />
-              <div className="absolute bottom-3 right-3 w-6 h-6 border-b border-r border-cyan-500/30" />
             </div>
 
             <div className="flex flex-col justify-between">
               <div>
-                <p className="text-[#7a8a9a] leading-relaxed mb-8">{activeCat.description}</p>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  {activeCat.description}
+                </p>
 
                 <div className="mb-8">
-                  <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#5a6a7a] mb-4">
+                  <h3 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">
                     Available Roles
-                  </div>
+                  </h3>
                   <div className="grid grid-cols-2 gap-3">
                     {activeCat.roles.map((role) => (
                       <div
                         key={role}
-                        className="flex items-center gap-2 text-sm text-[#7a8a9a] p-3 bg-[#0d1321] border border-[#1e2a3a]"
+                        className="flex items-center gap-2 text-sm text-slate-700 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-200 transition-colors"
                       >
-                        <ChevronRight size={14} className="text-cyan-500/50 flex-shrink-0" />
+                        <ChevronRight
+                          size={14}
+                          className="text-blue-600 flex-shrink-0"
+                        />
                         {role}
                       </div>
                     ))}
@@ -461,92 +461,92 @@ export function HirePageClient() {
                 </div>
               </div>
 
-              <button
-                onClick={() => scrollToSection("deploy")}
-                className="group flex items-center justify-center gap-3 px-6 py-4 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-mono uppercase tracking-wider hover:bg-cyan-500/20 transition-all w-full"
-              >
-                Request {activeCat.title} Workers
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </button>
+              <Link href="/company/contact" className="w-full">
+                <Button
+                  variant="gradient"
+                  className="w-full gap-2 h-12 text-base font-semibold"
+                >
+                  Request {activeCat.title} Workers
+                  <ArrowRight size={16} />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-24 relative">
-        <div className="absolute inset-0 bg-[#0d1321]/50" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#1e2a3a]" />
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#5a6a7a]">
-              Deployment Protocol
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#1e2a3a]" />
+      <section id="process" className="py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-balance">
+              From Request to{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Deployment
+              </span>
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto text-pretty">
+              Our streamlined process gets workers on-site fast.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16 tracking-tight text-balance">
-            From Request to Deployment
-          </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step, i) => (
-              <div
+            {processSteps.map((step) => (
+              <Card
                 key={step.step}
-                className="group relative p-6 bg-[#0a0e17] border border-[#1e2a3a] hover:border-cyan-500/30 transition-all"
+                className="border-2 hover:border-blue-200 transition-all group"
               >
-                {/* Step number */}
-                <div className="text-4xl font-bold font-mono text-[#1e2a3a] group-hover:text-cyan-900/50 transition-colors mb-6">
-                  {step.step}
-                </div>
-                <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-cyan-400 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-[#5a6a7a] leading-relaxed">{step.description}</p>
-                {/* Connector */}
-                {i < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-[#1e2a3a]" />
-                )}
-              </div>
+                <CardContent className="p-6">
+                  <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 group-hover:scale-105 transition-transform origin-left">
+                    {step.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section id="benefits" className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#1e2a3a]" />
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#5a6a7a]">
-              Operational Advantages
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#1e2a3a]" />
+      <section id="benefits" className="py-16 md:py-24 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-balance">
+              Why Companies{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Deploy With Us
+              </span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16 tracking-tight text-balance">
-            Why Companies Deploy With Us
-          </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
             {benefits.map((benefit) => {
               const Icon = benefit.icon
               return (
-                <div
+                <Card
                   key={benefit.title}
-                  className="group flex gap-6 p-6 bg-[#0d1321] border border-[#1e2a3a] hover:border-cyan-500/20 transition-all"
+                  className="border-2 hover:border-blue-200 transition-all"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-cyan-500/20 bg-cyan-500/5 text-cyan-400">
-                    <Icon size={22} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-[#5a6a7a] leading-relaxed">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
+                  <CardContent className="p-8 flex gap-6">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                      <Icon size={22} className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2">
+                        {benefit.title}
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {benefit.description}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               )
             })}
           </div>
@@ -554,49 +554,34 @@ export function HirePageClient() {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 bg-[#0d1321]/50" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#1e2a3a]" />
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-[#5a6a7a]">
-              Field Intelligence
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#1e2a3a]" />
+      <section className="py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-balance">
+              Built for{" "}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Regulated Industries
+              </span>
+            </h2>
+            <p className="text-lg text-slate-600 max-w-xl mx-auto text-pretty">
+              Thin margins, high stakes, essential work. We operate where
+              compliance is non-negotiable.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-6 tracking-tight text-balance">
-            Built for Regulated Industries
-          </h2>
-          <p className="text-center text-[#5a6a7a] mb-16 max-w-xl mx-auto text-pretty">
-            Thin margins, high stakes, essential work. We operate where compliance is non-negotiable.
-          </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { icon: Wrench, label: "Maintenance" },
-              { icon: HardHat, label: "Construction" },
-              { icon: CircuitBoard, label: "Electronics" },
-              { icon: Activity, label: "Clinical" },
-              { icon: Fuel, label: "Oil & Gas" },
-              { icon: Server, label: "Data Centers" },
-              { icon: Thermometer, label: "HVAC" },
-              { icon: Hammer, label: "Fabrication" },
-              { icon: Gauge, label: "Utilities" },
-              { icon: Bolt, label: "Electrical" },
-              { icon: Cable, label: "Telecom" },
-              { icon: Factory, label: "Processing" },
-            ].map((item) => {
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {industries.map((item) => {
               const Icon = item.icon
               return (
                 <div
                   key={item.label}
-                  className="flex flex-col items-center justify-center p-5 bg-[#0a0e17] border border-[#1e2a3a] hover:border-cyan-500/20 transition-all group"
+                  className="flex flex-col items-center justify-center p-5 bg-white rounded-lg border-2 border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all group"
                 >
                   <Icon
                     size={24}
-                    className="text-[#3a4a5a] group-hover:text-cyan-400 transition-colors mb-3"
+                    className="text-slate-400 group-hover:text-blue-600 transition-colors mb-3"
                   />
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#5a6a7a] group-hover:text-[#7a8a9a] transition-colors">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 group-hover:text-slate-700 transition-colors">
                     {item.label}
                   </span>
                 </div>
@@ -606,75 +591,55 @@ export function HirePageClient() {
         </div>
       </section>
 
-      {/* CTA / Deploy Section */}
-      <section id="deploy" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <ParticleBackground particleCount={30} particleColor="rgba(34, 211, 238, 0.3)" />
-        </div>
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-400" />
+      {/* CTA Banner */}
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-24">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 text-balance">
+            Deploy Your Workforce{" "}
+            <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
+              Today
             </span>
-            <span className="text-xs font-mono uppercase tracking-[0.3em] text-cyan-400">
-              Ready for Deployment
-            </span>
-          </div>
-
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight text-balance">
-            Deploy Your Workforce Today
           </h2>
-          <p className="text-lg text-[#5a6a7a] mb-10 max-w-xl mx-auto leading-relaxed text-pretty">
-            Submit your mission parameters and we will match you with pre-vetted contract workers
-            ready for immediate deployment.
+          <p className="text-lg text-blue-100 mb-10 max-w-xl mx-auto leading-relaxed text-pretty">
+            Submit your requirements and we will match you with pre-vetted
+            contract workers ready for immediate deployment.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/company/contact"
-              className="group flex items-center justify-center gap-3 px-8 py-4 bg-cyan-500 text-[#0a0e17] font-bold text-sm uppercase tracking-wider hover:bg-cyan-400 transition-all w-full sm:w-auto"
-            >
-              <Send size={18} />
-              Submit Request
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+            <Link href="/company/contact">
+              <Button
+                size="hero"
+                className="bg-white text-blue-600 hover:bg-slate-50 gap-2 font-bold"
+              >
+                <Send size={18} />
+                Submit Request
+                <ArrowRight size={18} />
+              </Button>
             </Link>
-            <Link
-              href="/solutions/consulting"
-              className="flex items-center justify-center gap-3 px-8 py-4 border border-[#1e2a3a] text-[#7a8a9a] text-sm uppercase tracking-wider hover:border-cyan-500/30 hover:text-cyan-400 transition-all w-full sm:w-auto"
-            >
-              Learn About Staffing
+            <Link href="/solutions/consulting">
+              <Button
+                variant="outline"
+                size="hero"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white bg-transparent"
+              >
+                Learn About Staffing
+              </Button>
             </Link>
           </div>
 
-          {/* Terminal-style info */}
-          <div className="mt-16 p-6 bg-[#0d1321] border border-[#1e2a3a] text-left font-mono text-xs">
-            <div className="text-[#3a4a5a] mb-2">{"// deployment_parameters.config"}</div>
-            <div className="space-y-1">
-              <div>
-                <span className="text-cyan-500">response_time</span>
-                <span className="text-[#3a4a5a]">{" : "}</span>
-                <span className="text-teal-300">{"\"< 24 hours\""}</span>
+          {/* Quick specs */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+            {[
+              { label: "Response Time", value: "< 24 hours" },
+              { label: "Min. Deployment", value: "1 worker" },
+              { label: "Contract Types", value: "All lengths" },
+              { label: "Coverage", value: "50 states" },
+            ].map((spec) => (
+              <div key={spec.label}>
+                <div className="text-lg font-bold text-white">{spec.value}</div>
+                <div className="text-xs text-blue-200">{spec.label}</div>
               </div>
-              <div>
-                <span className="text-cyan-500">minimum_deployment</span>
-                <span className="text-[#3a4a5a]">{" : "}</span>
-                <span className="text-teal-300">{"\"1 worker\""}</span>
-              </div>
-              <div>
-                <span className="text-cyan-500">contract_types</span>
-                <span className="text-[#3a4a5a]">{" : "}</span>
-                <span className="text-teal-300">{"\"short-term | long-term | project-based\""}</span>
-              </div>
-              <div>
-                <span className="text-cyan-500">coverage</span>
-                <span className="text-[#3a4a5a]">{" : "}</span>
-                <span className="text-teal-300">{"\"nationwide | 50 states\""}</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
