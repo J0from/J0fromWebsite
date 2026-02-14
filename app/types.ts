@@ -1,12 +1,15 @@
 import type { ReactNode } from "react"
 
-export interface SectionProps {
+export interface Section {
   id: string
-  title: ReactNode
+  title: string | ReactNode
   subtitle?: ReactNode
-  content?: ReactNode
-  isActive: boolean
+  content?: string
   showButton?: boolean
   buttonText?: string
   buttonLink?: string
+}
+
+export interface SectionProps extends Section {
+  isActive: boolean
 }
