@@ -62,6 +62,7 @@ function SignUpContent() {
       formData.firstName.trim() !== "" &&
       formData.lastName.trim() !== "" &&
       formData.email.trim() !== "" &&
+      formData.company.trim() !== "" &&
       formData.password.length >= 8 &&
       formData.password === formData.confirmPassword
     )
@@ -142,7 +143,7 @@ function SignUpContent() {
         <div className="w-full max-w-md mx-auto">
           <div className="text-center mb-6 sm:mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Create Your Account</h1>
-            <p className="text-slate-600">Join Jo and transform your business operations</p>
+            <p className="text-slate-600">Congratulations!!</p>
             {state.tier && (
               <p className="text-sm text-blue-600 mt-2">
                 {state.tier.charAt(0).toUpperCase() + state.tier.slice(1)} Plan ({state.billing})
@@ -199,9 +200,9 @@ function SignUpContent() {
                   />
                 </div>
 
-                {/* Company (Optional) */}
+                {/* Company (Required) */}
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company Name (Optional)</Label>
+                  <Label htmlFor="company">Company Name *</Label>
                   <Input
                     id="company"
                     type="text"
@@ -209,6 +210,7 @@ function SignUpContent() {
                     onChange={(e) => handleInputChange("company", e.target.value)}
                     placeholder="Acme Corp"
                     className="w-full"
+                    required
                   />
                 </div>
 
