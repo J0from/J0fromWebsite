@@ -51,7 +51,7 @@ export function FrameworkSection() {
 
         <div className="mt-12 text-center">
           <Link href="/solutions/smb">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 text-lg px-8 py-6 h-auto">
+            <Button variant="gradient">
               Get Jo
             </Button>
           </Link>
