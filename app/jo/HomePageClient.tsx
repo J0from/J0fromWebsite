@@ -78,7 +78,7 @@ export function HomePageClient() {
       <nav className="sticky top-0 z-50 flex justify-between items-center py-4 sm:py-6 px-6 md:px-12 lg:px-24 bg-slate-50/80 backdrop-blur-md border-b border-slate-200/50">
         <div className="flex items-center">
           <Link href="/" className="text-xl sm:text-2xl md:text-3xl">
-            <Logo width={24} height={24} />
+            <Logo size="md" />
           </Link>
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
@@ -121,24 +121,7 @@ export function HomePageClient() {
           <div className="mb-4 sm:mb-6 md:mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-slate-900 mb-4 sm:mb-6 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 leading-tight">
               <span className="flex items-center">
-                <span>J</span>
-                <div className="relative mx-1 sm:mx-2 inline-block" style={{ width: "0.6em", height: "0.6em" }}>
-                  <Image src="/qubit.png" alt="Qubit" fill sizes="20px" className="brightness-0 object-contain" />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 mix-blend-normal opacity-100"
-                    style={{
-                      maskImage: `url('/qubit.png')`,
-                      maskSize: "contain",
-                      maskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskImage: `url('/qubit.png')`,
-                      WebkitMaskSize: "contain",
-                      WebkitMaskRepeat: "no-repeat",
-                      WebkitMaskPosition: "center",
-                    }}
-                  ></div>
-                </div>
-                <span>from</span>
+                <Logo size="xl" />
               </span>
               <span className="relative hidden lg:inline-block">
                 <span
@@ -148,9 +131,8 @@ export function HomePageClient() {
                   {getUnderlineLength(roles[currentRole])}
                 </span>
                 <span
-                  className={`transition-all duration-300 ease-in-out transform relative ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                  }`}
+                  className={`transition-all duration-300 ease-in-out transform relative ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    }`}
                 >
                   <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {roles[currentRole]}

@@ -133,7 +133,7 @@ export default function ContactInfoPage() {
       {/* Navigation */}
       <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
         <Link href="/" className="text-2xl">
-          <Logo width={20} height={20} />
+          <Logo size="md" />
         </Link>
         <Button variant="ghost" className="gap-2" onClick={handleBackClick}>
           <ArrowLeft className="w-4 h-4" />

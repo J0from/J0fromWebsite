@@ -109,7 +109,7 @@ export default function WhitepaperLeadGenPage() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <nav className="flex justify-between items-center p-4 sm:p-6 max-w-7xl mx-auto border-b border-slate-100 bg-white/80 backdrop-blur">
         <Link href="/" className="text-xl sm:text-2xl font-bold">
-          <Logo width={20} height={20} />
+          <Logo size="md" />
         </Link>
         <Link href="/enterprise">
           <Button variant="ghost" className="gap-2">

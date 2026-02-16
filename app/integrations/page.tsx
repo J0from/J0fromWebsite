@@ -62,7 +62,7 @@ export default function IntegrationsPage() {
       {/* Navigation */}
       <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
         <Link href="/" className="text-2xl">
-          <Logo width={20} height={20} />
+          <Logo size="md" />
         </Link>
         <Button variant="ghost" className="gap-2" onClick={handleBackClick}>
           <ArrowLeft className="w-4 h-4" />
@@ -102,8 +102,8 @@ export default function IntegrationsPage() {
               <Card
                 key={integration.id}
                 className={`cursor-pointer transition-all duration-300 hover:shadow-lg relative ${selectedIntegrations.includes(integration.id)
-                    ? "border-2 border-blue-600 shadow-lg scale-105"
-                    : "border-2 border-transparent hover:border-blue-200"
+                  ? "border-2 border-blue-600 shadow-lg scale-105"
+                  : "border-2 border-transparent hover:border-blue-200"
                   }`}
                 onClick={() => toggleIntegration(integration.id)}
               >

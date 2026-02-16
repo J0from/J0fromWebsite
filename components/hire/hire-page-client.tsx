@@ -198,7 +198,7 @@ export function HirePageClient() {
               className="text-slate-600 group-hover:-translate-x-1 transition-transform"
             />
             <span className="text-xl sm:text-2xl">
-              <Logo width={14} height={14} />
+              <Logo size="sm" />
             </span>
           </Link>
         </div>
@@ -367,18 +367,16 @@ export function HirePageClient() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`group relative p-5 rounded-lg border-2 transition-all text-left ${
-                    isActive
+                  className={`group relative p-5 rounded-lg border-2 transition-all text-left ${isActive
                       ? "bg-white border-blue-300 shadow-md"
                       : "bg-white border-slate-200 hover:border-blue-200 hover:shadow-sm"
-                  }`}
+                    }`}
                 >
                   <div
-                    className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${
-                      isActive
+                    className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 ${isActive
                         ? "bg-gradient-to-br from-blue-600 to-purple-600"
                         : "bg-slate-100 group-hover:bg-blue-50"
-                    }`}
+                      }`}
                   >
                     <Icon
                       size={20}
@@ -393,9 +391,8 @@ export function HirePageClient() {
                     {cat.subtitle}
                   </div>
                   <div
-                    className={`text-sm font-semibold ${
-                      isActive ? "text-slate-900" : "text-slate-700"
-                    }`}
+                    className={`text-sm font-semibold ${isActive ? "text-slate-900" : "text-slate-700"
+                      }`}
                   >
                     {cat.title}
                   </div>

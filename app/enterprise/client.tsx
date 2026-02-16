@@ -29,7 +29,7 @@ export default function EnterpriseClientPage() {
         <Link href="/" className="text-xl sm:text-2xl font-bold">
           <span className="md:hidden">Jo from</span>
           <span className="hidden md:inline">
-            <Logo width={20} height={20} />
+            <Logo size="md" />
           </span>
         </Link>
         <div className="flex items-center gap-2 sm:gap-4">

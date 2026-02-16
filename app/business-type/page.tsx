@@ -131,7 +131,7 @@ export default function BusinessTypePage() {
       {/* Navigation */}
       <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto">
         <Link href="/" className="text-2xl">
-          <Logo width={20} height={20} />
+          <Logo size="md" />
         </Link>
         <Button variant="ghost" className="gap-2" onClick={handleBackClick}>
           <ArrowLeft className="w-4 h-4" />
@@ -148,8 +148,8 @@ export default function BusinessTypePage() {
               <Card
                 key={business.id}
                 className={`cursor-pointer transition-all duration-300 hover:shadow-xl relative ${selectedBusiness === business.id
-                    ? "border-2 border-blue-600 shadow-xl scale-105"
-                    : "border-2 border-transparent hover:border-blue-200"
+                  ? "border-2 border-blue-600 shadow-xl scale-105"
+                  : "border-2 border-transparent hover:border-blue-200"
                   }`}
                 onClick={() => setSelectedBusiness(business.id)}
               >
@@ -205,8 +205,8 @@ export default function BusinessTypePage() {
               <Button
                 disabled={!selectedBusiness}
                 className={`h-12 px-8 transition-all duration-200 ${selectedBusiness
-                    ? "bg-slate-900 hover:bg-slate-800 text-white"
-                    : "bg-slate-300 text-slate-500 cursor-not-allowed pointer-events-none"
+                  ? "bg-slate-900 hover:bg-slate-800 text-white"
+                  : "bg-slate-300 text-slate-500 cursor-not-allowed pointer-events-none"
                   }`}
               >
                 Continue Setup

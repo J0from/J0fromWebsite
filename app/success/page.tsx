@@ -27,7 +27,7 @@ function SuccessContent() {
       {/* Navigation */}
       <nav className="flex justify-between items-center p-4 sm:p-6 max-w-4xl mx-auto">
         <Link href="/" className="text-xl sm:text-2xl">
-          <Logo width={20} height={20} />
+          <Logo size="md" />
         </Link>
       </nav>
 

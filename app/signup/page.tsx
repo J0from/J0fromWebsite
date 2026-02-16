@@ -127,7 +127,7 @@ function SignUpContent() {
       {/* Navigation */}
       <nav className="flex justify-between items-center p-4 sm:p-6 max-w-6xl mx-auto">
         <Link href="/" className="text-xl sm:text-2xl">
-          <Logo width={20} height={20} />
+          <Logo size="md" />
         </Link>
         <Button variant="ghost" className="gap-2" asChild>
           <Link href="/">
@@ -299,8 +299,8 @@ function SignUpContent() {
                   disabled={!isFormValid() || isLoading}
                   variant={isFormValid() && !isLoading ? "gradient" : "default"}
                   className={`w-full h-12 transition-all duration-200 ${!(isFormValid() && !isLoading)
-                      ? "bg-slate-300 text-slate-500 cursor-not-allowed"
-                      : ""
+                    ? "bg-slate-300 text-slate-500 cursor-not-allowed"
+                    : ""
                     }`}
                 >
                   {isLoading ? (
