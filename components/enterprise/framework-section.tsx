@@ -51,7 +51,7 @@ export function FrameworkSection() {
 
         <div className="mt-12 text-center">
           <Link href="/solutions/smb">
-            <Button variant="gradient" size="lg">
+            <Button variant="gradient" className="h-12 px-8 text-base">
               Get Jo
             </Button>
           </Link>

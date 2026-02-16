@@ -197,15 +197,14 @@ export default function EnterpriseClientPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               variant="gradient"
-              size="lg"
+              className="h-12 px-8 text-base"
               onClick={() => window.open("https://calendly.com/myj0/30min", "_blank")}
             >
               Schedule a Demo
             </Button>
             <Button
-              size="lg"
+              className="h-12 px-8 text-base bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900"
               variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900"
               onClick={() => window.open("https://calendly.com/myj0/30min", "_blank")}
             >
               Contact Business Sales
