@@ -99,8 +99,7 @@ export function HomePageClient() {
       <section className="relative min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-center pt-8 sm:pt-0 pb-8">
         <div className="relative w-full max-h-[600px] overflow-hidden border-y-4 border-slate-300 shadow-lg">
           <video ref={videoRef} className="w-full h-full object-cover opacity-60" autoPlay loop muted playsInline>
-            {/* Replace with GCP Cloud Storage URL or local asset */}
-            <source src="/videos/hero.mp4" type="video/mp4" />
+            <source src="https://storage.googleapis.com/jofrom-media-assets/videos/hero.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-purple-300/10 pointer-events-none"></div>
