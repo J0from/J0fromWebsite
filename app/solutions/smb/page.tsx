@@ -2,9 +2,9 @@ import SMBPageClient from "./client"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Jo: Affordable Office Staff for Small Business | $25/month per Department",
+  title: "Jo: Affordable Office Staff for Small Business | $50/month per Department",
   description:
-    "Digital staffing for small businesses. Get support for Finance, HR, Accounting, IT, Marketing, Sales, and Operations. No code required. Starting at $25/month.",
+    "Digital staffing for small businesses. Get support for Finance, HR, Accounting, IT, Marketing, Sales, and Operations. No code required. Starting at $50/month.",
   keywords: [
     "small business solutions",
     "affordable digital employees",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jo: Affordable Office Staff for Small Business",
     description:
-      "Digital staffing for Finance, HR, Accounting, IT, Marketing, Sales, and Operations. Starting at $25/month.",
+      "Digital staffing for Finance, HR, Accounting, IT, Marketing, Sales, and Operations. Starting at $50/month.",
     type: "website",
     url: "https://www.jofrom.io/solutions/smb",
   },

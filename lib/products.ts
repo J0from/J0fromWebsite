@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     id: "starter-monthly",
     name: "Starter Plan",
     description: "All-in-one back office",
-    priceInCents: 2500, // $25
+    priceInCents: 5000, // $50
     features: ["1 Jo", "Email support", "Basic analytics", "Standard integrations"],
     agents: 1,
     billingCycle: "monthly",

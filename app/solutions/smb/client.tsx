@@ -419,7 +419,7 @@ export default function SMBPageClient() {
                         <span className="text-base sm:text-lg font-semibold text-gray-900">Simple Pricing</span>
                       </div>
                       <div className="text-right">
-                        <div className="text-xl sm:text-2xl font-bold text-blue-600">$25</div>
+                        <div className="text-xl sm:text-2xl font-bold text-blue-600">$50</div>
                         <div className="text-xs sm:text-sm text-gray-600">per month</div>
                       </div>
                     </div>
