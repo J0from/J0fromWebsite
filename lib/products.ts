@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
     id: "growth-monthly",
     name: "Growth Plan",
     description: "All-in-one back office",
-    priceInCents: 7500, // $75
+    priceInCents: 15000, // $150
     features: ["3 Jos", "Priority email support", "Advanced analytics", "Custom workflows"],
     agents: 3,
     billingCycle: "monthly",
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     id: "professional-monthly",
     name: "Professional Plan",
     description: "All-in-one back office",
-    priceInCents: 10000, // $100
+    priceInCents: 20000, // $200
     features: ["Everything in Growth Plan", "5 Jos", "API access", "24/7 priority support"],
     agents: 5,
     billingCycle: "monthly",
@@ -58,7 +58,7 @@ export const PRODUCTS: Product[] = [
     id: "enterprise-monthly",
     name: "Enterprise Plan",
     description: "Advanced Human + Machine",
-    priceInCents: 15000, // $150
+    priceInCents: 30000, // $300
     features: ["Everything in Professional Plan", "8 Jos", "Account manager", "Custom training", "SLA guarantee"],
     agents: 8,
     billingCycle: "monthly",
@@ -69,7 +69,7 @@ export const PRODUCTS: Product[] = [
     id: "starter-annual",
     name: "Starter Plan",
     description: "All-in-one back office",
-    priceInCents: 1900, // $19/month
+    priceInCents: 3800, // $38/month (billed $456 annually)
     features: ["1 Jo", "Email support", "Basic analytics", "Standard integrations"],
     agents: 1,
     billingCycle: "annual",
@@ -79,7 +79,7 @@ export const PRODUCTS: Product[] = [
     id: "growth-annual",
     name: "Growth Plan",
     description: "All-in-one back office",
-    priceInCents: 5700, // $57/month (billed $684 annually)
+    priceInCents: 11400, // $114/month (billed $1368 annually)
     features: ["3 Jos", "Priority email support", "Advanced analytics", "Custom workflows"],
     agents: 3,
     billingCycle: "annual",
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
     id: "professional-annual",
     name: "Professional Plan",
     description: "All-in-one back office",
-    priceInCents: 7500, // $75/month (billed $900 annually)
+    priceInCents: 15000, // $150/month (billed $1800 annually)
     features: ["Everything in Growth Plan", "5 Jos", "API access", "24/7 priority support"],
     agents: 5,
     billingCycle: "annual",
@@ -99,7 +99,7 @@ export const PRODUCTS: Product[] = [
     id: "enterprise-annual",
     name: "Enterprise Plan",
     description: "Advanced Human + Machine",
-    priceInCents: 11200, // $112/month (billed $1344 annually)
+    priceInCents: 22400, // $224/month (billed $2688 annually)
     features: ["Everything in Professional Plan", "8 Jos", "Account manager", "Custom training", "SLA guarantee"],
     agents: 8,
     billingCycle: "annual",
